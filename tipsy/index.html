@@ -64,10 +64,8 @@
 [[Уткнуться носом в пузико]]</tw-passagedata><tw-passagedata pid="10" name="startup" tags="startup" position="500,300" size="100,100">(set: $tipsy to &quot;кошка&quot;)
 (set:$hasDice to false)
 (set:$terebonka to 0)
-(set:$win to false)</tw-passagedata><tw-passagedata pid="11" name="Кубик" tags="" position="1200,500" size="100,100">(set: _dice to (random: 1,6))
-Ты смотришь на кубик и видишь, что там написано:(if: $terebonka &gt;= 8 and not $win)[ [[Ласки]]](else-if: _dice is 1)[ [[Перекус]]](else-if: _dice is 2)[ [[Караоке]]](else-if: _dice is 3)[ [[Спорт]]](else-if: _dice is 4)[ [[Охота]]](else-if: _dice is 5)[ [[Прятки]]](else-if: _dice is 6)[(link:&quot; Ласки&quot;)[(t8n:&quot;dissolve&quot;)(show:?laski)]
-
-|laski)[Обрадовавшись, ты тянешь руки к Типси, как вдруг она лапкой переворачивает [[кубик|Кубик]].]]</tw-passagedata><tw-passagedata pid="12" name="Не даётся" tags="" position="800,325" size="100,100">(nth: visit,
+(set:$win to false)</tw-passagedata><tw-passagedata pid="11" name="Кубик" tags="" position="1200,500" size="100,100">(set: _dice to (random: 1,5))
+Ты смотришь на кубик и видишь, что там написано:(if: $terebonka &gt;= 8 and not $win)[ [[Ласки]]](else-if: _dice is 1)[ [[Перекус]]](else-if: _dice is 2)[ [[Караоке]]](else-if: _dice is 3)[ [[Спорт]]](else-if: _dice is 4)[ [[Охота]]](else-if: _dice is 5)[ [[Прятки]]]</tw-passagedata><tw-passagedata pid="12" name="Не даётся" tags="" position="800,325" size="100,100">(nth: visit,
 &quot;Ты тянешь руку, но $tipsy ускользает из-под твоей ладони и [[уходит в другую комнату|Комната]].&quot;,
 
 &quot;Ты наклоняешься, но $tipsy убегает до того, как у тебя получается к ней прикоснуться. [[Тебя накрывает грусть|Комната]].&quot;,
