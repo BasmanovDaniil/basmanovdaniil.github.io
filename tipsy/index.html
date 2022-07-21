@@ -61,11 +61,16 @@
 [[Поиграть с подушечками на лапках]]
 [[Обнять]]
 [[Чмокнуть в лобик]]
-[[Уткнуться носом в пузико]]</tw-passagedata><tw-passagedata pid="10" name="startup" tags="startup" position="500,300" size="100,100">(set: $tipsy to &quot;кошка&quot;)
-(set:$hasDice to false)
-(set:$terebonka to 0)
-(set:$win to false)</tw-passagedata><tw-passagedata pid="11" name="Кубик" tags="" position="1200,500" size="100,100">(set: _dice to (random: 1,5))
-Ты смотришь на кубик и видишь, что там написано:(if: $terebonka &gt;= 8 and not $win)[ [[Ласки]]](else-if: _dice is 1)[ [[Перекус]]](else-if: _dice is 2)[ [[Караоке]]](else-if: _dice is 3)[ [[Спорт]]](else-if: _dice is 4)[ [[Охота]]](else-if: _dice is 5)[ [[Прятки]]]</tw-passagedata><tw-passagedata pid="12" name="Не даётся" tags="" position="800,325" size="100,100">(nth: visit,
+[[Уткнуться носом в пузико]]</tw-passagedata><tw-passagedata pid="10" name="startup" tags="startup" position="500,300" size="100,100">(set: $sequence to (shuffled:&quot;[[Перекус]]&quot;, &quot;[[Караоке]]&quot;, &quot;[[Спорт]]&quot;, &quot;[[Охота]]&quot;, &quot;[[Прятки]]&quot;))
+(set: $tipsy to &quot;кошка&quot;)
+(set: $hasDice to false)
+(set: $terebonka to 0)
+(set: $win to false)</tw-passagedata><tw-passagedata pid="11" name="Кубик" tags="" position="1200,500" size="100,100">(set: _dice to (nth: visits, ...$sequence))
+{
+Ты смотришь на кубик и видишь, что там написано:
+(if: $terebonka &gt;= 8 and not $win)[ [[Ласки]]]
+(else:)[_dice]
+}</tw-passagedata><tw-passagedata pid="12" name="Не даётся" tags="" position="800,325" size="100,100">(nth: visit,
 &quot;Ты тянешь руку, но $tipsy ускользает из-под твоей ладони и [[уходит в другую комнату|Комната]].&quot;,
 
 &quot;Ты наклоняешься, но $tipsy убегает до того, как у тебя получается к ней прикоснуться. [[Тебя накрывает грусть|Комната]].&quot;,
