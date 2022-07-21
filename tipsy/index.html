@@ -20,23 +20,33 @@
 Ты приглядываешься и понимаешь, что это ошейник. На нём написано &quot;Типси&quot;.
 [[Замечательное имя!|Комната]]</tw-passagedata><tw-passagedata pid="3" name="Стол" tags="" position="925,375" size="100,100">(set:$hasDice to true)
 На столе лежит кубик, ты протягиваешь руку, чтобы его поднять, как вдруг $tipsy запрыгивает на стол и смахивает лапой кубик на пол. Подбегает к нему и [[выжидающе смотрит на тебя|Кубик]].</tw-passagedata><tw-passagedata pid="4" name="Перекус" tags="" position="600,700" size="100,100">&lt;img src=&quot;Перекус.jpg&quot; width=&quot;400&quot;&gt;
+{
 (nth: visit, ...$perekus)
-(set:$terebonka to $terebonka + 1)</tw-passagedata><tw-passagedata pid="5" name="Караоке" tags="" position="700,700" size="100,100">&lt;img src=&quot;Караоке.jpg&quot; width=&quot;400&quot;&gt;
+(set:$terebonka to $terebonka + 1)
+}</tw-passagedata><tw-passagedata pid="5" name="Караоке" tags="" position="700,700" size="100,100">&lt;img src=&quot;Караоке.jpg&quot; width=&quot;400&quot;&gt;
+{
 (nth: visit, ...$karaoke)
-(set:$terebonka to $terebonka + 1)</tw-passagedata><tw-passagedata pid="6" name="Спорт" tags="" position="800,700" size="100,100">&lt;img src=&quot;Спорт.jpg&quot; width=&quot;400&quot;&gt;
+(set:$terebonka to $terebonka + 1)
+}</tw-passagedata><tw-passagedata pid="6" name="Спорт" tags="" position="800,700" size="100,100">&lt;img src=&quot;Спорт.jpg&quot; width=&quot;400&quot;&gt;
+{
 (nth: visit, ...$sport)
-(set:$terebonka to $terebonka + 1)</tw-passagedata><tw-passagedata pid="7" name="Охота" tags="" position="900,700" size="100,100">&lt;img src=&quot;Охота.jpg&quot; width=&quot;400&quot;&gt;
+(set:$terebonka to $terebonka + 1)
+}</tw-passagedata><tw-passagedata pid="7" name="Охота" tags="" position="900,700" size="100,100">&lt;img src=&quot;Охота.jpg&quot; width=&quot;400&quot;&gt;
+{
 (nth: visit, ...$ohota)
-(set:$terebonka to $terebonka + 1)</tw-passagedata><tw-passagedata pid="8" name="Прятки" tags="" position="1000,700" size="100,100">&lt;img src=&quot;Прятки.jpg&quot; width=&quot;400&quot;&gt;
+(set:$terebonka to $terebonka + 1)
+}</tw-passagedata><tw-passagedata pid="8" name="Прятки" tags="" position="1000,700" size="100,100">&lt;img src=&quot;Прятки.jpg&quot; width=&quot;400&quot;&gt;
+{
 (nth: visit, ...$pryatki)
-(set:$terebonka to $terebonka + 1)</tw-passagedata><tw-passagedata pid="9" name="Ласки" tags="" position="1200,700" size="100,100">(set:$win to true)
+(set:$terebonka to $terebonka + 1)
+}</tw-passagedata><tw-passagedata pid="9" name="Ласки" tags="" position="1200,700" size="100,100">(set:$win to true)
 Наконец-то! Типси отбрасывает кубик далеко в сторону, ты протягиваешь к ней руки и сперва решаешь...
 [[Почесать пузико]]
 [[Погладить по спинке]]
 [[Поиграть с подушечками на лапках]]
 [[Обнять]]
 [[Чмокнуть в лобик]]
-[[Уткнуться носом в пузико]]</tw-passagedata><tw-passagedata pid="10" name="startup" tags="startup" position="500,300" size="100,100">(set: $sequence to (shuffled:&quot;[[Перекус]]&quot;, &quot;[[Караоке]]&quot;, &quot;[[Спорт]]&quot;, &quot;[[Охота]]&quot;, &quot;[[Прятки]]&quot;))
+[[Уткнуться носом в пузико]]</tw-passagedata><tw-passagedata pid="10" name="startup" tags="startup" position="500,300" size="100,100">{(set: $sequence to (shuffled:&quot;[[Перекус]]&quot;, &quot;[[Караоке]]&quot;, &quot;[[Спорт]]&quot;, &quot;[[Охота]]&quot;, &quot;[[Прятки]]&quot;))
 (set: $tipsy to &quot;кошка&quot;)
 (set: $hasDice to false)
 (set: $terebonka to 0)
@@ -71,7 +81,7 @@
 
 &quot;Типси стремглав бежит в свой любимый домик. Ты пытаешься спрятаться в шкафу, но не влезаешь. Тебе приходится [[признать свое поражение|Комната]]!&quot;,
 
-&quot;Ты прячешься за дверью, Типси тебя потеряла и недоуменно мяучит. Нельзя расстраивать кошку, [[выходи|Комната]]!&quot;))</tw-passagedata><tw-passagedata pid="11" name="Кубик" tags="" position="1200,500" size="100,100">(set: _dice to (nth: visits, ...$sequence))
+&quot;Ты прячешься за дверью, Типси тебя потеряла и недоуменно мяучит. Нельзя расстраивать кошку, [[выходи|Комната]]!&quot;))}</tw-passagedata><tw-passagedata pid="11" name="Кубик" tags="" position="1200,500" size="100,100">(set: _dice to (nth: visits, ...$sequence))
 {
 Ты смотришь на кубик и видишь, что там написано:
 (if: $terebonka &gt;= 8 and not $win)[ [[Ласки]]]
